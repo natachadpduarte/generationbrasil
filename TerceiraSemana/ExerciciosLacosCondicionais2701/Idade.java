@@ -19,21 +19,21 @@ public class Idade {
 			idade = ler.nextInt();
 			
 			if(idade>=10 && idade<=14) {
-				System.out.println("Você se enquadra na categoria infantil --> 10-14 anos");
+				System.out.println("Você se enquadra na categoria infantil --> 10-14 anos!");
 	
 			}
 			
 			else if (idade>=15 && idade<=17){
-				System.out.println("Você se enquadra na categoria juvenil --> 15-17 anos");				 
+				System.out.println("Você se enquadra na categoria juvenil --> 15-17 anos!");				 
 			}
 			
 			else if (idade>=18 && idade<=25) {
-				System.out.println("Você se enquadra na categoria adulto --> 18-25 anos");
+				System.out.println("Você se enquadra na categoria adulto --> 18-25 anos!");
 			}
 			
 			else {
 				
-				System.out.println("Você não se enqudra em nenhuma das categorias mapeadas.");
+				System.out.println("Você não se enquadra em nenhuma das categorias mapeadas.");
 			}
 		}
 }
