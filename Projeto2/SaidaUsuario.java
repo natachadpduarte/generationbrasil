@@ -43,8 +43,57 @@ public class SaidaUsuario {
 		}
 		
 		
-		
-
 	}
 	
+	
+	
+public static int menuInicial() {
+		
+		
+		int x,y;
+		
+		do {
+			System.out.println("Olá empresário!\n\n"
+					+ "Bem vindo! Vamos planejar seu futuro?\n"
+					+ "Como posso te ajudar hoje?\n"
+					+ "\n1 - Planejamento tributário"
+					+ "\n"
+					+ "2 - Informações\r\n"
+					 );
+			try {
+				x = EntradaUsuario.getInt();
+			}catch (Exception e) {
+				System.out.println("Opção inválida. Tente novamente!");
+				return SaidaUsuario.menuInicial();
+				
+			}
+			
+		}while(x < 0 || x > 2);
+		return x; 
+		
+	}
+
+	public static String informacoes(int numAnexo) {
+	
+		String lista[] = {"\nEstão incluídas neste anexo atividades diversas relacionada a comerciantes, lojistas e inclusive produtores que comercializam produtos. Confira exemplos: horticultura, distribuição\nde água por caminhões, produção de ovos, pesca de peixes em água salgada, extração de minério de alumínio, comércio a varejo de automóveis,  produção de carvão vegetal, entre outras.\r\n"
+				+ "\n"
+				+ "","\nEstão incluídas neste anexo fábricas/indústrias e empresas industriais, dentre outras atividades como: beneficiamento de minérios de cobre, chumbo, zinco e outros minerais;\nfrigoríficos; abatedouros; preservação de peixes, crustáceos e moluscos; fabricação de laticínios.\r\n"
+						+ "\n"
+					+ "","\nAnexo III do Simples Nacional – Atividades de Serviços\n\n"
+							+ "Estão incluídos serviços diversos, como acupuntura, podologia, academias, laboratórios, instalação, reparos e manutenção, agências de viagens, lotéricas, escritórios de contabilidade,\ndentre outros.\r\n"
+							+ " \n"
+						+ "","\nAnexo IV do Simples Nacional – Atividades de Serviços de construção civil\n\n"
+								+ "Aqui estão incluídas empresas diversas, que fornecem desde serviço de limpeza, vigilância, obras, construção de imóveis, serviços de pintura de edifícios em geral, perfuração\ne construção de poços de água, serviços advocatícios, dentre outros.\r\n"
+								+ "\n"
+							+ "","\nAnexo V do Simples Nacional – Atividades de Serviços de cunho intelectual\n\n"
+									+ "Neste caso, são empresas que fornecem serviço de auditoria, jornalismo, tecnologia, publicidade, engenharia, design de produto e interiores, serviços de tradução, atividades\nveterinárias, dentre outros.\r\n"
+									+ "" 
+							
+		};
+			
+	
+	return lista[numAnexo-1];
+	
+	
+	}
 }
