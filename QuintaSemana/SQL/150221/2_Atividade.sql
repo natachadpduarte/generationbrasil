@@ -62,11 +62,13 @@ select * from tb_pizza;
 /*Faça um select que retorne os Produtos com o valor maior do que 45 reais.*/
 
 SELECT * FROM tb_pizza
-WHERE valor > 45.00;
+WHERE valor > 45.00
+ORDER BY valor ASC;
 
 /*Faça um select trazendo os Produtos com valor entre 29 e 60 reais.*/
 SELECT * FROM tb_pizza
-WHERE valor BETWEEN '29.00' AND '60.00';
+WHERE valor BETWEEN '29.00' AND '60.00'
+ORDER BY valor ASC;
 
 
 /*Faça um select utilizando LIKE buscando os Produtos com a letra C.*/
@@ -76,7 +78,7 @@ WHERE sabor LIKE "C%";
 
 /*Faça um um select com Inner join entre tabela categoria e pizza.*/
 
-SELECT * FROM td_categorias c
+SELECT * FROM tb_categorias c
 INNER JOIN tb_pizza p ON (c.id=p.id_categoria);
 
 
