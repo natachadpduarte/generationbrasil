@@ -17,25 +17,6 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 CREATE SCHEMA IF NOT EXISTS `db_grace` DEFAULT CHARACTER SET utf8 ;
 USE `db_grace` ;
 
--- -----------------------------------------------------
--- Table `db_grace`.`table1`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `db_grace`.`table1` (
-  `id` INT NOT NULL,
-  `nome` VARCHAR(45) NOT NULL,
-  `Idade` INT NOT NULL,
-  PRIMARY KEY (`id`, `nome`),
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `db_grace`.`table2`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `db_grace`.`table2` (
-)
-ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `db_grace`.`tb_usuario`
