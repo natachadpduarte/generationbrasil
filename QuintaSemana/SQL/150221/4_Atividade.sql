@@ -86,7 +86,7 @@ INNER JOIN tb_categorias c ON (p.categoria_id=c.id);
 
 
 /*Faça um select onde traga todos os Produtos de uma categoria específica (exemplo todos
-os produtos que são da categoria hidráulica).*/
+os produtos que são cosméticos).*/
 
 SELECT * FROM tb_produto p
 INNER JOIN tb_categorias c ON (p.categoria_id=c.id)
