@@ -34,11 +34,13 @@ public class ProdutoController {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<Produto> GetById(@PathVariable long id) {
-		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
+		return repository.findById(id)
+				.map(resp -> ResponseEntity.ok(resp))
+				.orElse(ResponseEntity.notFound().build());
 	}
 
 	@GetMapping("/nome/{nome}")
-	public ResponseEntity<List<Produto>> GetByProduto(@PathVariable String nome) {
+	public ResponseEntity<List<Produto>> GetByNome(@PathVariable String nome) {
 		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
 	}
 
