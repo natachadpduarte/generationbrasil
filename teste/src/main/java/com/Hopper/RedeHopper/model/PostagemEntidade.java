@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
@@ -23,10 +24,11 @@ public class PostagemEntidade {
 	@NotNull
 	private String titulo;
 
+	@Size(min=7,max=5000)
 	private String conteudo;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date date = new java.sql.Date(System.currentTimeMillis());
+	private Date data_publicacao = new java.sql.Date(System.currentTimeMillis());
 
 	private String imagem;
 
@@ -63,11 +65,11 @@ public class PostagemEntidade {
 	}
 
 	public Date getDate() {
-		return date;
+		return data_publicacao;
 	}
 
 	public void setDate(Date date) {
-		this.date = date;
+		this.data_publicacao = date;
 	}
 
 	public String getImagem() {

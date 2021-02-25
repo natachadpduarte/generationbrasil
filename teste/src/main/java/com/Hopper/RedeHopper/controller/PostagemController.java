@@ -42,10 +42,17 @@ public class PostagemController {
 				.orElse(ResponseEntity.notFound().build());
 	}
 
-	@GetMapping("/tema/{tema}")
-	public ResponseEntity<List<PostagemEntidade>> GetByNome(@PathVariable String titulo) {
+	@GetMapping("/titulo/{titulo}")
+	public ResponseEntity<List<PostagemEntidade>> GetByTitulo(@PathVariable String titulo) {
 		return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
 	}
+	
+	
+	/*
+	@GetMapping("/tema/{tema}")
+	public ResponseEntity<List<PostagemEntidade>> GetByTema(@PathVariable String tema) {
+		return ResponseEntity.ok(repository.findAllByTemaContainingIgnoreCase(tema));
+	}*/
 
 	@PostMapping
 	public ResponseEntity<PostagemEntidade> post(@RequestBody PostagemEntidade postagementidade) {

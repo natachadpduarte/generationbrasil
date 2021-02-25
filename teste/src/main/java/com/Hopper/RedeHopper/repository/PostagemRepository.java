@@ -10,7 +10,10 @@ import com.Hopper.RedeHopper.model.PostagemEntidade;
 @Repository
 public interface PostagemRepository extends JpaRepository<PostagemEntidade, Long> {
 	
+	/*List<PostagemEntidade> findAllByTemaContainingIgnoreCase(String tema);*/
 	List<PostagemEntidade> findAllByTituloContainingIgnoreCase(String titulo);
+	
 
 	
 }
+
