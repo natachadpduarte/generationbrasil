@@ -43,61 +43,64 @@ public class PostagemEntidade {
 	@JsonIgnoreProperties("usuario")
 	private Usuario usuario;
 
+
 	public long getId_postagem() {
 		return id_postagem;
 	}
+
 
 	public void setId_postagem(long id_postagem) {
 		this.id_postagem = id_postagem;
 	}
 
+
 	public String getTitulo() {
 		return titulo;
 	}
+
 
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
 
+
 	public String getConteudo() {
 		return conteudo;
 	}
+
 
 	public void setConteudo(String conteudo) {
 		this.conteudo = conteudo;
 	}
 
+
 	public Date getData_publicacao() {
 		return data_publicacao;
 	}
+
 
 	public void setData_publicacao(Date data_publicacao) {
 		this.data_publicacao = data_publicacao;
 	}
 
+
 	public String getImagem() {
 		return imagem;
 	}
+
 
 	public void setImagem(String imagem) {
 		this.imagem = imagem;
 	}
 
+
 	public int getSaldo_reacoes() {
 		return saldo_reacoes;
 	}
 
+
 	public void setSaldo_reacoes(int saldo_reacoes) {
 		this.saldo_reacoes = saldo_reacoes;
-	}
-	
-	public void addReacaoPositiva() {
-		this.saldo_reacoes++;
-
-	}
-
-	public void addReacaoNegativa() {
-		this.saldo_reacoes--;
 	}
 
 
@@ -105,10 +108,25 @@ public class PostagemEntidade {
 		return tema;
 	}
 
+
 	public void setTema(Tema tema) {
 		this.tema = tema;
 	}
 
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+
+
+
+	
 	
 	
 	
