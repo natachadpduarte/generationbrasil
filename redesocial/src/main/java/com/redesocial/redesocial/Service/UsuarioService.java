@@ -1,4 +1,6 @@
-package com.redesocial.redesocial.Service;
+package com.redesocial.redesocial.service;
+
+
 import java.nio.charset.Charset;
 import java.util.Optional;
 
@@ -19,6 +21,8 @@ public class UsuarioService {
 	private UsuarioRepository repository;
 	
 	public Usuario CadastrarUsuario(Usuario usuario) {
+		
+		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		
 		String senhaEncoder = encoder.encode(usuario.getSenha());
@@ -40,12 +44,23 @@ public class UsuarioService {
 				String authHeader = "Basic " + new String(encodeAuth);
 				
 				user.get().setToken(authHeader);
+				user.get().setId(usuario.get().getId());
 				user.get().setNome(usuario.get().getNome());
+				user.get().setFoto(usuario.get().getFoto());
+				user.get().setTipo(usuario.get().getTipo());
+				
 				
 				return user;
 			}
 		}
 		return null;
 	}
+	
+	public Usuario getById(long id) {
+		Optional<Usuario> user= this.repository.findById(id);
+		if(user.isPresent()) return user.get();
+		else return null;
+	}
+
 
 }

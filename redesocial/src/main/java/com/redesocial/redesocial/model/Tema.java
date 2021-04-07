@@ -26,9 +26,9 @@ public class Tema {
 	@NotNull
 	private String descricao;
 	
-	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("tema")
-	private List<Post> post;
+	private List<Postagem> postagem;
 
 	public long getId() {
 		return id;
@@ -46,13 +46,14 @@ public class Tema {
 		this.descricao = descricao;
 	}
 
-	public List<Post> getPost() {
-		return post;
+	public List<Postagem> getPostagem() {
+		return postagem;
 	}
 
-	public void setPost(List<Post> post) {
-		this.post = post;
+	public void setPostagem(List<Postagem> postagem) {
+		this.postagem = postagem;
 	}
+
 
 	
 	

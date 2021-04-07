@@ -15,24 +15,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.redesocial.redesocial.model.Post;
+import com.redesocial.redesocial.model.Postagem;
 import com.redesocial.redesocial.repository.PostagemRepository;
 
 @RestController
 @RequestMapping("/postagens")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PostagemController {
 
 	@Autowired
 	private PostagemRepository repository;
 	
 	@GetMapping
-	public ResponseEntity<List<Post>> GetAll(){
+	public ResponseEntity<List<Postagem>> GetAll(){
 		return ResponseEntity.ok(repository.findAll());
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Post> GetById(@PathVariable long id) {
+	public ResponseEntity<Postagem> GetById(@PathVariable long id) {
 		return repository.findById(id)
 				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
@@ -40,19 +40,19 @@ public class PostagemController {
 	
 	@GetMapping("/titulo/{titulo}")
 	
-	public ResponseEntity<List<Post>> GetByTitulo(@PathVariable String titulo){
+	public ResponseEntity<List<Postagem>> GetByTitulo(@PathVariable String titulo){
 		return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
 	}
 	
 	
 	@PostMapping
-	public ResponseEntity<Post> post (@RequestBody Post post){
-		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(post));
+	public ResponseEntity<Postagem> post (@RequestBody Postagem postagem){
+		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(postagem));
 	}
 	
 	@PutMapping
-	public ResponseEntity<Post> put (@RequestBody Post post){
-		return ResponseEntity.status(HttpStatus.OK).body(repository.save(post));
+	public ResponseEntity<Postagem> put (@RequestBody Postagem postagem){
+		return ResponseEntity.status(HttpStatus.OK).body(repository.save(postagem));
 	}
 	
 	@DeleteMapping("/{id}")

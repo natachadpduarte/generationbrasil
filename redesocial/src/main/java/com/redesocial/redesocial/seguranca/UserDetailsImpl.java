@@ -7,6 +7,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.redesocial.redesocial.model.Usuario;
 
+import java.util.Collection;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import com.redesocial.redesocial.model.Usuario;
+
 public class UserDetailsImpl implements UserDetails{
 
 	
